@@ -1,5 +1,4 @@
 {
-  "proxy": "https://api.edamam.com",
   "name": "cooking-recipes",
   "version": "0.1.0",
   "private": true,

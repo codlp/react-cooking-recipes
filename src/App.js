@@ -16,7 +16,7 @@ function App() {
   // We create a state that only submits itself after we click the search button
   const [query, setQuery] = useState('chicken');
   
-  const exampleApiRequest = `/search?q=${query}&app_id=${appId}&app_key=${appKey}`;
+  const exampleApiRequest = `https://api.edamam.com/search?q=${query}&app_id=${appId}&app_key=${appKey}`;
 
   useEffect(() => {
     getRecipes();
