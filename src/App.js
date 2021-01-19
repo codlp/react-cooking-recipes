@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import Recipe from './Recipe';
 import './App.css';
 
 function App() {
@@ -10,6 +11,8 @@ function App() {
 
   const exampleApiRequest = `/search?q=chicken&app_id=${appId}&app_key=${appKey}`;
 
+  const [recipes, setRecipes] = useState([]);
+
   useEffect(() => {
     getRecipes();
   }, []);
@@ -17,10 +20,12 @@ function App() {
   const getRecipes = async () => {
     const response = await fetch(exampleApiRequest);
     const data = await response.json();
-    console.log(data);
+    // console.log(data);
+    setRecipes(data.hits);
   };
   
   return (
+    // This is JSX
     <div className="App">
       <h1>Cooking Recipes</h1>
       <form className="search-form" action="">
@@ -29,6 +34,9 @@ function App() {
           Search
         </button>
       </form>
+      {recipes.map(recipe =>(
+        <Recipe />
+      ))};
     </div>
   );
 };
