@@ -9,10 +9,9 @@ function App() {
   const appId = process.env.REACT_APP_APP_ID;
   const appKey = process.env.REACT_APP_APP_KEY;
 
-  
   const [recipes, setRecipes] = useState([]);
   
-  // We want to search through the recipes
+  // SEARCH through the recipes
   const [search, setSearch] = useState("");
   // We create a state that only submits itself after we click the search button
   const [query, setQuery] = useState('chicken');
@@ -46,8 +45,8 @@ function App() {
 
   return (
     // This is JSX
-    <div className="App">
-      <h1>Cooking Recipes</h1>
+    <div className="app">
+      <h1 class="page-title">Cooking Recipes</h1>
       <form 
       onSubmit={getSearch}
       className="search-form" action="">
@@ -63,14 +62,16 @@ function App() {
       {/* recipes is an array */}
       {/* we are passing things from the states to the props */}
       {/* Each child in a list should have a unique "key" prop */}
-      {recipes.map(recipe =>(
-        <Recipe
-          key={recipe.recipe.label}
-          title={recipe.recipe.label}
-          calories={recipe.recipe.calories}
-          image={recipe.recipe.image}
-          ingredients={recipe.recipe.ingredients} />
-      ))};
+      <div className="recipe">
+        {recipes.map(recipe =>(
+          <Recipe
+            key={recipe.recipe.label}
+            title={recipe.recipe.label}
+            calories={recipe.recipe.calories}
+            image={recipe.recipe.image}
+            ingredients={recipe.recipe.ingredients} />
+        ))};
+      </div>
     </div>
   );
 };

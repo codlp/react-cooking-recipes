@@ -1,4 +1,6 @@
 import React from 'react';
+// Custom made CSS for this particular Recipe component
+import style from './recipe.module.css';
 
 // We create a Recipe component
 // The goal is to map through it
@@ -8,15 +10,15 @@ import React from 'react';
 const Recipe = ({title, calories, image, ingredients}) => {
     return(
         // This is JSX
-        <div>
-            <h1>{title}</h1>
+        <div className={style.recipe}>
+            <h1 className={style.title}>{title}</h1>
+            <img src={image} alt="recipe-image" className={style.image}/>
             <p>{Math.round(calories)} calories</p>
-            <ul>
+            <ul className={style.ingredients}>
                 {ingredients.map(ingredient =>(
-                    <li>{ingredient.text}</li>
+                    <li className={style.ingredient}>{ingredient.text}</li>
                 ))};
             </ul>
-            <img src={image} alt=""/>
         </div>
     );
 };
