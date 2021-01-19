@@ -5,12 +5,17 @@ import React from 'react';
 // and display it inside the App component
 
 // In the parenthesis, we are passing things from the props to the Recipe component
-const Recipe = ({title, calories, image}) => {
+const Recipe = ({title, calories, image, ingredients}) => {
     return(
         // This is JSX
         <div>
             <h1>{title}</h1>
-            <p>{calories}</p>
+            <p>{Math.round(calories)} calories</p>
+            <ul>
+                {ingredients.map(ingredient =>(
+                    <li>{ingredient.text}</li>
+                ))};
+            </ul>
             <img src={image} alt=""/>
         </div>
     );
