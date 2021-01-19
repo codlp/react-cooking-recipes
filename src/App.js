@@ -34,8 +34,15 @@ function App() {
           Search
         </button>
       </form>
+      {/* recipes is an array */}
+      {/* we are passing things from the states to the props */}
       {recipes.map(recipe =>(
-        <Recipe />
+        <Recipe
+          {/* Each child in a list should have a unique "key" prop */}
+          key={recipe.recipe.label}
+          title={recipe.recipe.label}
+          calories={recipe.recipe.calories}
+          image={recipe.recipe.image} />
       ))};
     </div>
   );
