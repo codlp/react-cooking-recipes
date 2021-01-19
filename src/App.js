@@ -46,7 +46,7 @@ function App() {
   return (
     // This is JSX
     <div className="app">
-      <h1 class="page-title">Cooking Recipes</h1>
+      <h1 className="page-title">Cooking Recipes</h1>
       <form 
       onSubmit={getSearch}
       className="search-form" action="">

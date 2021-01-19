@@ -12,7 +12,7 @@ const Recipe = ({title, calories, image, ingredients}) => {
         // This is JSX
         <div className={style.recipe}>
             <h2 className={style.title}>{title}</h2>
-            <img src={image} alt="recipe-image" className={style.image}/>
+            <img src={image} alt="recipe" className={style.image}/>
             <p>{Math.round(calories)} calories</p>
             <ul className={style.ingredients}>
                 {ingredients.map(ingredient =>(
